@@ -37,7 +37,6 @@ describe('navigation', () => {
     })
     it('should navigate down the navigation tree', () => {
       dataGateway.get.mockImplementation((path) => {
-        console.log('*** /authors pathD =', path)
         if (path.indexOf('/authors') !== -1) {
           return Promise.resolve(SingleAuthorsResultStub())
         } else if (path.indexOf('/book?emailOwnerId=a@b.com&bookId=') !== -1) {
@@ -73,7 +72,6 @@ describe('navigation', () => {
 
     it('should move back twice', () => {
       dataGateway.get.mockImplementation((path) => {
-        console.log('*** /authors pathD =', path)
         if (path.indexOf('/authors') !== -1) {
           return Promise.resolve(SingleAuthorsResultStub())
         } else if (path.indexOf('/book?emailOwnerId=a@b.com&bookId=') !== -1) {
